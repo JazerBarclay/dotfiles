@@ -24,6 +24,7 @@ alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # Git Alias
 alias gstat='git status'
+alias gpush='git push'
 
 gadd() {
   if [ $# -eq 0 ]
