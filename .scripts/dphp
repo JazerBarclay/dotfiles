@@ -1,0 +1,14 @@
+#!/bin/bash
+
+display_usage() {
+	echo "Run this at the root of the web directory"
+	echo "Usage: dphp"
+}
+
+echo "Removing any old sandboxes"
+docker stop php-sandbox
+docker rm php-sandbox
+
+echo "Starting sandbox in `echo $PWD` at localhost on port 80"
+docker run -d -p 80:80 --name php-sandbox -v "$PWD":/var/www/html php:7.2-apache
+
