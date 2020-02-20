@@ -4,20 +4,10 @@ alias ....='cd ../../../'
 alias .....='cd ../../../../'
 alias ......='cd ../../../../../'
 
-
 alias ll='ls -hal'
 alias la='stat -c "%a %U %n" *'
 
 alias shell='echo $0'
-
-# Use the lsblk command from linux on mac shell
-alias lsblk='diskutil list'
-
-# Use umount command on mac
-alias umount='diskutil unmountDisk'
-
-# Use gnu grep when installed with brew rather than the built in macos version
-alias grep="ggrep"
 
 # Dotfile/Config Tracking
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
