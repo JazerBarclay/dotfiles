@@ -12,7 +12,7 @@ NEWLINE=$'\n'
 
 #PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
-PROMPT='[%n@t440p] '
+PROMPT='[%n@%m] '
 RPROMPT=\$vcs_info_msg_0_' %?'
 
 # History in cache directory:
