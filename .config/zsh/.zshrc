@@ -12,13 +12,19 @@ NEWLINE=$'\n'
 
 #PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
-PROMPT='[%n@%m] '
+PROMPT='[%F{208}%n%f@%F{226}%m%f] '
 RPROMPT=\$vcs_info_msg_0_' %?'
+
+# Zsh to use the same colors as ls
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
+
+# Dotfiles Config
+/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME config --local status.showUntrackedFiles no
 
 # Source shortcuts and aliases
 export PATH=$PATH:~/.scripts
