@@ -30,11 +30,11 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# Set Wallpaper
-exec --no-startup-id ~/.fehbg
-
 # Natural Scrolling
 exec --no-startup-id synclient NaturalScrolling=1 VertScrollDelta=-113
+
+# Feh Background
+exec --no-startup-id sh ~/.fehbg &
 
 # Keyboard layout setup
 #
