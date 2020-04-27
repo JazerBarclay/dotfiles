@@ -26,6 +26,10 @@ HISTFILE=~/.cache/zsh/history
 # Dotfiles Config
 /usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME config --local status.showUntrackedFiles no
 
+# Auto cd option
+setopt autocd
+
+
 # Source shortcuts and aliases
 export PATH=$PATH:~/.scripts
 source ~/.config/zsh/.zsh_alias
