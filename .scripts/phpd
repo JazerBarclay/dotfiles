@@ -3,12 +3,23 @@
 display_usage() {
 	echo "Run this at the root of the web directory"
 	echo "Usage: dphp"
+	echo "  -h : "
+	echo "  -k : kill running sandbox"
 }
 
-echo "Removing any old sandboxes"
-docker stop php-sandbox
-docker rm php-sandbox
+kill_running() {
+	echo "Removing any old sandboxes"
+	docker stop php-sandbox
+	docker rm php-sandbox
+}
+
+while getopts "hk" o; do case "${o}" in
+	h) display_usage && exit ;;
+	k) kill_running && exit ;;
+	*) printf "Invalid option: -%s\\n" "$OPTARG" && exit ;;
+esac done
+
+kill_running
 
 echo "Starting sandbox in `echo $PWD` at localhost on port 80"
 docker run -d -p 80:80 --name php-sandbox -v "$PWD":/var/www/html php:7.2-apache
-
