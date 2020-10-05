@@ -1,5 +1,16 @@
 #!/bin/bash
 
+display_usage() {
+	echo "Please ensure device id is added (eg: sda)"
+	echo "Usage: bb [device]"
+}
+
+if [ $# -le 0 ]
+then
+	display_usage
+	exit 1
+fi
+
 clear
 
 echo 'Running test on /dev/'$1
