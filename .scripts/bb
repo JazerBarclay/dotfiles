@@ -20,5 +20,6 @@ echo ''
 
 echo 'Running test on /dev/'$1
 echo -n 'SERIAL ID: ' && udevadm info --query=property --name=/dev/$1 | grep ID_SERIAL | cut -d '=' -f2 | head -1
+echo -n 'SERIAL_SHORT: ' && udevadm info --query=property --name=/dev/$1 | grep ID_SERIAL | cut -d '=' -f2 | tail -1
 
 badblocks -nsv -b 4096 -c 4096 /dev/$1
