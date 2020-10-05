@@ -16,9 +16,6 @@ then
 fi
 
 projectname=$(echo $@ | tr " " - | tr '[:upper:]' '[:lower:]')
-#projectname=$(echo $@ | sed -e "s/\b\(.\)/\u\1/g" | tr " " -)
-#projectname=$(echo $1 | sed -e "s/\b\(.\)/\u\1/g" | tr " " -)
-#projectname=$1
 echo "Creating project: $projectname"
 
 curl -X POST \

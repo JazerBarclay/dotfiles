@@ -4,7 +4,7 @@ alias ....='cd ../../../'
 alias .....='cd ../../../../'
 alias ......='cd ../../../../../'
 
-alias ls='ls --color=auto'
+# alias ls='ls --color=auto'
 
 alias l='ls'
 alias ll='ls -hal'
@@ -19,6 +19,7 @@ alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias gstat='git status'
 alias gpush='git push'
 alias gpull='git pull'
+alias gdiff='git diff'
 
 gadd() {
   if [ $# -eq 0 ]
@@ -49,3 +50,4 @@ alias bl='xrandr --output eDP1 --brightness '
 alias wifi='sudo wifi-menu'
 alias red='redshift -l 50.85519:0.57292 &'
 
+alias ios='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/'

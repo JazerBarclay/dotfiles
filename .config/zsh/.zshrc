@@ -29,6 +29,8 @@ HISTFILE=~/.cache/zsh/history
 # Auto cd option
 setopt autocd
 
+# Source brew
+export PATH="/usr/local/bin:${PATH}"
 
 # Source shortcuts and aliases
 export PATH=$PATH:~/.scripts
