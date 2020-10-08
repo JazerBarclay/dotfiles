@@ -46,8 +46,4 @@ gpall(){
 # Docker shortcuts
 alias drest="docker stop $(docker ps -a -q) > /dev/null 2>&1 && echo 'Successfully Stoped All Containers' || echo 'Containers empty or unable to stop' ; docker rm $(docker ps -a -q) > /dev/null 2>&1 && echo 'Succesfully Removed All Containers' || echo 'Containers empty or unable to remove' ; docker system prune -af > /dev/null 2>&1 && echo 'Removed all Images' || echo 'No images or unable to remove'"
 
-alias bl='xrandr --output eDP1 --brightness '
-alias wifi='sudo wifi-menu'
-alias red='redshift -l 50.85519:0.57292 &'
-
 alias ios='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/'
