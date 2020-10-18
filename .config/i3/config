@@ -44,11 +44,11 @@ exec 'setxkbmap -layout gb'
 for_window [class="^.*"] border pixel 2
 
 # Add gaps to i3 windows
-gaps inner 15
-gaps outer 15
+#gaps inner 15
+#gaps outer 15
 
 # Smart borders
-smart_borders on
+#smart_borders on
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
