@@ -1,0 +1,4 @@
+#!/bin/sh
+TEMP=$(sensors | grep 'Package id 0:\|Tdie' | awk {'print $4'} | cut -d "+" -f2 | awk {'print $1'}) 
+CPU_USAGE=$(mpstat 1 1 | awk '/Average:/ {printf("%s\n", $(NF-9))}' | cut -d "." -f1)
+echo "$CPU_USAGE" | awk '{ printf("  CPU: %s% \n"), $1 }'

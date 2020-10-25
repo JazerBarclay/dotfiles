@@ -1,0 +1,5 @@
+#!/bin/bash
+
+TEMP=$(sensors | grep 'Package id 0:\|Tdie' | awk {'print $4'} | cut -d "+" -f2 | awk {'print $1'}) 
+
+printf "  %s°C " $TEMP

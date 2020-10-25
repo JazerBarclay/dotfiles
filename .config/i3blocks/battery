@@ -1,0 +1,6 @@
+#!/bin/bash
+
+REMAIN=`acpi | cut -d "," -f2`
+PERCENT=`acpi | cut -d "," -f3`
+
+printf "  %s (%s) \n " $REMAIN $PERCENT

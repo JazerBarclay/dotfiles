@@ -1,0 +1,4 @@
+#!/bin/bash
+
+DISPLAYIP="wlp3s0"
+ip addr | grep $DISPLAYIP | grep inet | awk {'print $2'} | cut -d "/" -f1 | awk '{ printf("  %s \n"), $1 }'
