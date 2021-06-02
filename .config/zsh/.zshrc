@@ -29,6 +29,10 @@ HISTFILE=~/.cache/zsh/history
 # Auto cd option
 setopt autocd
 
+# Bind keys
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
 # Source brew
 export PATH="/usr/local/bin:${PATH}"
 
