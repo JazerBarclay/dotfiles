@@ -47,6 +47,9 @@ gpall(){
 # Ubuntu / Pop_OS Shortcuts
 alias aptall="sudo apt update && sudo apt -y dist-upgrade && sudo apt -y autoremove"
 
+# MacOS Like Shortcuts
+alias open="xdg-open"
+
 # Docker shortcuts
 alias drest="docker stop $(docker ps -a -q) > /dev/null 2>&1 && echo 'Successfully Stoped All Containers' || echo 'Containers empty or unable to stop' ; docker rm $(docker ps -a -q) > /dev/null 2>&1 && echo 'Succesfully Removed All Containers' || echo 'Containers empty or unable to remove' ; docker system prune -af > /dev/null 2>&1 && echo 'Removed all Images' || echo 'No images or unable to remove'"
 
