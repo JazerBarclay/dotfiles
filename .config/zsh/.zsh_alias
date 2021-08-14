@@ -12,6 +12,17 @@ alias la='stat -c "%a %U %n" *'
 
 alias shell='echo $0'
 
+alias fetch='clear;echo;neofetch'
+
+# Linux Tools
+
+# Disk Usage - Sorted and errors dumped
+dush() {
+  du -sh $1 2>/dev/null | sort -hr
+}
+
+# 
+
 # Dotfile/Config Tracking
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
@@ -20,6 +31,7 @@ alias gstat='git status'
 alias gpush='git push'
 alias gpull='git pull'
 alias gdiff='git diff'
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 gadd() {
   if [ $# -eq 0 ]
@@ -37,6 +49,10 @@ gcommit() {
   else
     git commit -m "$*"
   fi
+}
+
+gunstage() {
+  git restore --staged $1
 }
 
 gpall(){
