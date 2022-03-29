@@ -12,6 +12,17 @@ alias la='stat -c "%a %U %n" *'
 
 alias shell='echo $0'
 
+alias fetch='clear;echo;neofetch'
+
+# Linux Tools
+
+# Disk Usage - Sorted and errors dumped
+dush() {
+  du -sh $1 2>/dev/null | sort -hr
+}
+
+# 
+
 # Dotfile/Config Tracking
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
@@ -20,7 +31,7 @@ alias gstat='git status'
 alias gpush='git push'
 alias gpull='git pull'
 alias gdiff='git diff'
-alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 gadd() {
   if [ $# -eq 0 ]
@@ -40,12 +51,19 @@ gcommit() {
   fi
 }
 
+gunstage() {
+  git restore --staged $1
+}
+
 gpall(){
   curl -X GET -u jazerbarclay:`cat $HOME/.keys/git_api_key` https://api.github.com/user/repos | grep \"full_name\" | tr -s ' ' | awk '{print $2}' | tr "/" " " | awk '{print "pull " substr($2, 0, length($2)-2)}' | xargs -0 zsh -c
 }
 
 # Ubuntu / Pop_OS Shortcuts
 alias aptall="sudo apt update && sudo apt -y dist-upgrade && sudo apt -y autoremove"
+
+# MacOS Like Shortcuts
+alias open="xdg-open"
 
 # Docker shortcuts
 alias drest="docker stop $(docker ps -a -q) > /dev/null 2>&1 && echo 'Successfully Stoped All Containers' || echo 'Containers empty or unable to stop' ; docker rm $(docker ps -a -q) > /dev/null 2>&1 && echo 'Succesfully Removed All Containers' || echo 'Containers empty or unable to remove' ; docker system prune -af > /dev/null 2>&1 && echo 'Removed all Images' || echo 'No images or unable to remove'"
