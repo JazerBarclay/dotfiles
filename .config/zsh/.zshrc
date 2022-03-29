@@ -1,3 +1,5 @@
+EDITOR=/usr/bin/vim
+
 # Enable colors and change prompt:
 autoload -U colors && colors
 
@@ -35,6 +37,9 @@ bindkey "^[[1;5D" backward-word
 
 # Source brew
 export PATH="/usr/local/bin:${PATH}"
+
+# Source user local binaries
+export PATH="/home/jazer/.local/bin:${PATH}"
 
 # Source shortcuts and aliases
 export PATH=$PATH:~/.scripts
